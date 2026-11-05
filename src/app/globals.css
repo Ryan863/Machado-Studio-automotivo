@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #09090b;
+    --bg-elevated: #121215;
+    --bg-card-hover: #17171c;
+    --accent-red: #dc2626;
+    --accent-red-bright: #ef4444;
+    --text-primary: #f4f4f5;
+    --text-metallic: #e4e4e7;
+    --text-muted: #a1a1aa;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #09090b;
+    color: #e4e4e7;
+    font-family: var(--font-jakarta), sans-serif;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: #09090b;
+    color: #e4e4e7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #dc2626;
+    color: #ffffff;
+  }
+}
+
+.font-display {
+  font-family: var(--font-syne), sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+/* Custom subtle metallic sheen & studio surface helpers */
+.studio-card {
+  background-color: rgba(18, 18, 21, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.studio-card-interactive {
+  background-color: rgba(18, 18, 21, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.studio-card-interactive:hover {
+  border-color: rgba(220, 38, 38, 0.45);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.85), 0 0 28px -8px rgba(220, 38, 38, 0.2);
+}
